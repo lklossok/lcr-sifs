@@ -12,23 +12,15 @@
         docker push lklossok/dlbclone:latest
 
 
-## Locally build the Singularity image on thanos:
+## Locally build the Singularity image on thanos OR gphost:
     # 1. conda activate base
     # 2. Build Singularity image from Docker Hub
         {bash}
-        singularity build dlbclone.sif docker://lklossok/dlbclone:latest
+        singularity build lcr-sifs/sifs/dlbclone/dlbclone.sif docker://lklossok/dlbclone:latest
     # 3. Test Singularity image R terminal
         {bash}
         singularity exec dlbclone.sif R
         installed.packages()[,c('Package','LibPath')] # check installed R packages and their library paths
-    # 4. Publish Singularity image to lcr sifs
-
-
-## To use the Singularity image on HPC:
-    # 1. Open your HPC terminal.
-        {bash}
-        wget https://github.com/USER/REPO/releases/download/v1.0.0/dlbclone.sif
-        singularity exec dlbclone.sif dlbclone
 
 
 ### Current Docker containers available:
